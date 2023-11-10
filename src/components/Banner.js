@@ -13,6 +13,22 @@ export const Banner = () => {
     const [delta, setDelta] = useState(100);
     const [index, setIndex] = useState(1);
     const period = 1500;
+    const [scrolled, setScrolled] = useState(false);
+
+    const scroll = () => {
+      const section = document.querySelector( '#contact' );
+      section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+    };
+
+    useEffect(() => {
+      const onScroll = () => {
+        if (window.scrollY > 50) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
+      }
+    })
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -21,6 +37,7 @@ export const Banner = () => {
 
         return () => { clearInterval(ticker) };
     }, [text])
+
 
     const tick = () => {
         let i = loopNum % toRotate.length;
@@ -57,7 +74,7 @@ export const Banner = () => {
                                 <div className={isVisible ? 'animate__animated animate__fadeIn' : ""}>
                                     <h1>{`Hi, I'm Kingson, `}<span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Python Programmer", "CS Student"]'><br /><span className="wrap">a {text}</span></span></h1>
                                     <p>About me</p>
-                                    <button onClick={() => console.log('connect')}>Let's Connect <ArrowRightCircle size={25} /></button>
+                                    <button onClick={scroll}>Let's Connect <ArrowRightCircle size={25} /></button>
                                 </div>}
                         </TrackVisibility>
                     </Col>
