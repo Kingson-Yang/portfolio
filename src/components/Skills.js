@@ -1,7 +1,5 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
 import html from '../assets/img/html.svg';
 import css from '../assets/img/css.svg';
 import js from '../assets/img/js.svg';
