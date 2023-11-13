@@ -73,7 +73,6 @@ export const Banner = () => {
                             {({ isVisible }) =>
                                 <div className={isVisible ? 'animate__animated animate__fadeIn' : ""}>
                                     <h1>{`Hi, I'm Kingson, `}<span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Python Programmer", "CS Student"]'><br /><span className="wrap">a {text}</span></span></h1>
-                                    <p>About me</p>
                                     <button onClick={scroll}>Let's Connect <ArrowRightCircle size={25} /></button>
                                 </div>}
                         </TrackVisibility>
